@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>update blog ........</title>
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>add blog</h1>
+
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>post</button>
+        </form>
+    {% endif %}
+{% endblock %}

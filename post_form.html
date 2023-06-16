@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block title%}
+    <title>post blog</title>
+{% endblock %}
+{% block content%}
+<h1>add blog</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.media}}
+        {{form.as_p}}
+        <button>post</button>
+
+
+
+    </form>
+   <script>
+    var name = "{{ user.id }}" ;
+    document.getElementById('devp') =name ;
+   </script>
+    
+
+{% endblock %}

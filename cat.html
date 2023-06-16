@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title%}
+    <title>my bloggin app</title>
+{% endblock %}
+{% block content%}
+<h1>category</h1>
+{% for post in catss%}
+<li>
+    <a href= "{% url 'show' post.pk %}" style="text-decoration: none;">
+        {{post.title}} - {{post.author}} - <br>
+    {{post.body| slice:":100"}} -  {{post.date}}
+   {% if user.is_authenticated %}
+   <a href="{% url 'update' post.pk %}">edit</a>
+
+</a>
+<a href="{% url 'romove' post.pk %}">delete</a>
+    {% endif %}
+<a href="">{{post.cat}}</a>
+</li>
+
+{% endfor %}
+{% endblock%}

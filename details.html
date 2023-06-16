@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block title%}
+    <title>{{post.title}}</title>
+{% endblock %}
+{% block content%}
+<h1>
+    {{post.title}}
+    <legend>
+        <br>
+     <h1>{{ post.body }}</h1>
+     <br>
+     <strong>{{post.author}}</strong>
+</h1>
+<br>
+    </legend>
+<br>
+<a href="{% url 'home' %}"  class="btn btn-danger">back</a>
+<br>
+<br>
+
+{% endblock %}
